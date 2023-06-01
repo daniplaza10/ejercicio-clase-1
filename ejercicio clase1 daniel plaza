@@ -1,0 +1,308 @@
+  package Ejercicio1;
+import java.io.*;
+
+public class Main {
+	
+    public static void main(String[] args) {
+        Persona persona = new Persona("Dani Plaza", 1990); // Crear un objeto Persona
+
+        // Escribir el objeto en un archivo
+        escribirPersonaEnArchivo(persona, "persona.txt");
+        
+        // Leer el objeto desde el archivo
+        Persona personaLeida = leerPersonaDeArchivo("persona.txt");
+
+        // Imprimir los detalles de la persona leída
+        System.out.println("Nombre: " + personaLeida.getNombre());
+        System.out.println("Año de nacimiento: " + personaLeida.getAnoNacimiento());
+    }
+
+    // Método para escribir un objeto Persona en un archivo
+    public static void escribirPersonaEnArchivo(Persona persona, String archivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
+            oos.writeObject(persona);
+            System.out.println("El objeto Persona ha sido escrito en el archivo.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Método para leer un objeto Persona desde un archivo
+    public static Persona leerPersonaDeArchivo(String archivo) {
+        Persona persona = null;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
+            persona = (Persona) ois.readObject();
+            System.out.println("El objeto Persona ha sido leído desde el archivo.");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return persona;
+    }
+}
+ package MultiplicarMatrices;
+
+public class MatrixMultiplier {
+    public int[][] multiply(int[][] matrix1, int[][] matrix2) {
+        int rows1 = matrix1.length;
+        int columns1 = matrix1[0].length;
+        int rows2 = matrix2.length;
+        int columns2 = matrix2[0].length;
+
+        if (columns1 != rows2) {
+            throw new IllegalArgumentException("Las dimensiones de las matrices no son válidas para la multiplicación.");
+        }
+
+        int[][] result = new int[rows1][columns2];
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < columns2; j++) {
+                for (int k = 0; k < columns1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
+}
+ : package Ejercicio1;
+import java.io.*;
+
+public class Main {
+	
+    public static void main(String[] args) {
+        Persona persona = new Persona("Dani Plaza", 1990); // Crear un objeto Persona
+
+        // Escribir el objeto en un archivo
+        escribirPersonaEnArchivo(persona, "persona.txt");
+        
+        // Leer el objeto desde el archivo
+        Persona personaLeida = leerPersonaDeArchivo("persona.txt");
+
+        // Imprimir los detalles de la persona leída
+        System.out.println("Nombre: " + personaLeida.getNombre());
+        System.out.println("Año de nacimiento: " + personaLeida.getAnoNacimiento());
+    }
+
+    // Método para escribir un objeto Persona en un archivo
+    public static void escribirPersonaEnArchivo(Persona persona, String archivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
+            oos.writeObject(persona);
+            System.out.println("El objeto Persona ha sido escrito en el archivo.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Método para leer un objeto Persona desde un archivo
+    public static Persona leerPersonaDeArchivo(String archivo) {
+        Persona persona = null;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
+            persona = (Persona) ois.readObject();
+            System.out.println("El objeto Persona ha sido leído desde el archivo.");
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return persona;
+    }
+}
+: package MultiplicarMatrices;
+
+public class MatrixMultiplier {
+    public int[][] multiply(int[][] matrix1, int[][] matrix2) {
+        int rows1 = matrix1.length;
+        int columns1 = matrix1[0].length;
+        int rows2 = matrix2.length;
+        int columns2 = matrix2[0].length;
+
+        if (columns1 != rows2) {
+            throw new IllegalArgumentException("Las dimensiones de las matrices no son válidas para la multiplicación.");
+        }
+
+        int[][] result = new int[rows1][columns2];
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < columns2; j++) {
+                for (int k = 0; k < columns1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
+}
+[: package MultiplicarMatrices;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class MatrixMultiplierTest {
+	@Test
+	public void testMatrixMultiplication() {
+		MatrixMultiplier multiplier = new MatrixMultiplier();
+
+		int[][] matrix1 = { { 1, 2, 3 }, { 4, 5, 6 } };
+		int[][] matrix2 = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
+		int[][] expected = { { 58, 64 }, { 139, 154 } };
+
+		int[][] result = multiplier.multiply(matrix1, matrix2);
+
+		assertArrayEquals(expected, result);
+	}
+
+	@Test
+	public void testMatrixMultiplication2() {
+		MatrixMultiplier multiplier = new MatrixMultiplier();
+
+		int[][] matrix1 = { {…
+[12:32, 1/6/2023] +34 692 42 64 39: package MultiplicarMatrices;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class MatrixMultiplierTest {
+	@Test
+	public void testMatrixMultiplication() {
+		MatrixMultiplier multiplier = new MatrixMultiplier();
+
+		int[][] matrix1 = { { 1, 2, 3 }, { 4, 5, 6 } };
+		int[][] matrix2 = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
+		int[][] expected = { { 58, 64 }, { 139, 154 } };
+
+		int[][] result = multiplier.multiply(matrix1, matrix2);
+
+		assertArrayEquals(expected, result);
+	}
+
+	@Test
+	public void testMatrixMultiplication2() {
+		MatrixMultiplier multiplier = new MatrixMultiplier();
+
+		int[][] matrix1 = { { 1, 2 }, { 3, 4 } };
+		int[][] matrix2 = { { 5, 6 }, { 7, 8 } };
+		int[][] expected = { { 19, 22 }, { 43, 50 } };
+
+		int[][] result = multiplier.multiply(matrix1, matrix2);
+
+		Assertions.assertArrayEquals(expected, result);
+	}
+
+	@Test
+    public void testMatrixMultiplicationWithInvalidInput() {
+        MatrixMultiplier multiplier = new MatrixMultiplier();
+
+        int[][] matrix1 = {{1, 2}, {3, 4}};
+        int[][] matrix2 = {{5, 6}, {7, 8}};
+
+        // Modificar la matriz 2 para incluir un valor no numérico
+        matrix2[0][1] = (int) 'A';
+
+        // Intentar multiplicar las matrices
+        int[][] result = multiplier.multiply(matrix1, matrix2);
+
+        // Verificar que el resultado es null
+        Assertions.assertNull(result);
+    }
+
+	@Test
+	public void testMatrixMultiplicationWithInvalidInput1() {
+		MatrixMultiplier multiplier = new MatrixMultiplier();
+
+		int[][] matrix1 = { { 1, 2 }, { 3, 4 } };
+		int[][] matrix2 = { { 5, 6 }, { 7, 8 } };
+
+		// Crear archivos de texto con valores inválidos (strings en lugar de números)
+		Main.writeMatrixToFile(new int[][] { { 1, 2 }, { 3, 4 } }, "matrix1.txt");
+		Main.writeMatrixToFile(new int[][] { { 0, 0 }, { 0, 0 } }, "matrix2.txt");
+
+		// Intentar multiplicar las matrices
+		int[][] result = multiplier.multiply(matrix1, matrix2);
+
+		// Verificar que el resultado es null
+		Assertions.assertNull(result);
+	}
+	
+	
+}
+[: import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        String fileMatrix1 = "matrix1.txt";
+        String fileMatrix2 = "matrix2.txt";
+        String fileResult = "result.txt";
+
+        // Leer matrices desde los archivos de texto
+        int[][] matrix1 = readMatrixFromFile(fileMatrix1);
+        int[][] matrix2 = readMatrixFromFile(fileMatrix2);
+
+        // Multiplicar las matrices
+        MatrixMultiplier multiplier = new MatrixMultiplier();
+        int[][] result = multiplier.multiply(matrix1, matrix2);
+
+        // Escribir el resultado en un archivo de texto
+        writeMatrixToFile(result, fileResult);
+
+        System.out.println("La multiplicación de matrices se ha completado.");
+    }
+
+    public static int[][] readMatrixFromFile(String fileName) {
+        int[][] matrix = null;
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            List<int[]> rows = new ArrayList<>();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] values = line.split(",");
+                int[] row = new int[values.length];
+                for (int i = 0; i < values.length; i++) {
+                    row[i] = Integer.parseInt(values[i].trim());
+                }
+                rows.add(row);
+            }
+            if (!rows.isEmpty()) {
+                matrix = new int[rows.size()][rows.get(0).length];
+                for (int i = 0; i < rows.size(); i++) {
+                    matrix[i] = rows.get(i);
+                }
+                if (matrix.length < 2 || matrix[0].length < 2) {
+                    throw new IllegalArgumentException("Las dimensiones de la matriz son menores a 2x2.");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return matrix;
+    }
+
+
+    public static void writeMatrixToFile(int[][] matrix, String fileName) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+            for (int[] row : matrix) {
+                StringBuilder sb = new StringBuilder();
+                for (int value : row) {
+                    sb.append(value).append(",");
+                }
+                sb.deleteCharAt(sb.length() - 1); // Eliminar la última coma
+                writer.println(sb.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
